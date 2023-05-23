@@ -14,4 +14,4 @@ jobs:
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - name: Push image
-        run: bazelisk run @com_github_google_go_containerregistry//cmd/crane:crane -- push --platform linux/amd64 $(bazelisk info -c opt bazel-bin)/server_image.tar ghcr.io/${{ github.repository }}:${{ github.sha }}
+        run: bazelisk run @com_github_google_go_containerregistry//cmd/crane:crane -- push --platform linux/amd64 $(bazel info execution_root)/$(bazelisk cquery -c opt --output=files //:server_image.tar) ghcr.io/${{ github.repository }}:${{ github.sha }}
