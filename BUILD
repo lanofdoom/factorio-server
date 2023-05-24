@@ -6,33 +6,36 @@ container_layer(
     tars = ["@factorio_headless_release//file"],
 )
 
+# config-path.cfg configures the following:
+# - `config-path` is `/etc/factorio`
+# - `write-data` is `~/.factorio` (via use-system-read-write-data-directories=true)
+# - `read-data` is `/usr/share/factorio` (via use-system-read-write-data-directories=true)
+#
+# To match the default `read-data` path, a symlink is created to the data
+# directory from the extracted factorio package (`/opt/factorio/data`).
+#
 container_layer(
-    name = "config",
-    directory = "/etc/factorio",
+    name = "config_path_cfg",
+    directory = "/opt/factorio",
     files = [
-        "map-gen-settings.json",
-        "map-settings.json",
-        "server-settings.json",
+        "config-path.cfg",
     ],
+    symlinks = {"/usr/share/factorio": "/opt/factorio/data"},
 )
 
 container_image(
     name = "server_image",
     base = "@distroless_cc_base//image",
-    entrypoint = [
-        "/opt/factorio/bin/x64/factorio",
-        "--server-settings=/etc/factorio/server-settings.json",
-        "--map-settings=/etc/factorio/map-settings.json",
-        "--map-gen-settings=/etc/factorio/map-gen-settings.json",
-    ],
+    entrypoint = ["/opt/factorio/bin/x64/factorio"],
     layers = [
         ":factorio_server",
-        ":config",
+        ":config_path_cfg",
     ],
 )
 
 sh_test(
-    name = "server_image_test",
-    srcs = ["test.sh"],
-    deps = [":server_image"],
+    name = "generate_map_test",
+    srcs = ["generate_map_test.sh"],
+    data = [":server_image.tar"],
+    deps = ["@bazel_tools//tools/bash/runfiles"],
 )
