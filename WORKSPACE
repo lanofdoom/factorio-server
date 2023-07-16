@@ -5,8 +5,8 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file"
 http_file(
     name = "factorio_headless_release",
     downloaded_file_path = "factorio.tar.xz",
-    sha256 = "66c89e01160d40d18f199836ca78d4e6292e828d873df528a70233fe40796635",
-    urls = ["https://factorio.com/get-download/1.1.80/headless/linux64"],
+    sha256 = "60b3884b6dad1f4c7b30b7ef2b63619ff4a3204ac7fd894cf09d382b349857cc",
+    urls = ["https://factorio.com/get-download/1.1.87/headless/linux64"],
 )
 
 http_archive(
