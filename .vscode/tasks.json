@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "bazel build //:server_image"
+            "command": "bazel build //:image"
         }
     ]
 }

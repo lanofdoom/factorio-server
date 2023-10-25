@@ -26,7 +26,6 @@ else
 fi
 # --- end runfiles.bash initialization ---
 
-docker load --input $(rlocation "com_github_lanofdoom_factorio_server/server_image.tar")
-image=bazel:server_image
-
-docker run --rm $image --create test.zip
+docker load --input $(rlocation "com_github_lanofdoom_factorio_server/image_tarball/tarball.tar")
+set -x
+docker run --rm factorio-server:bazel --create test.zip
