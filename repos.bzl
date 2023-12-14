@@ -25,10 +25,10 @@ filegroup(
 )
 
         """,
-        sha256 = "96289caf52d1c7b15eb95be54104c69d41752b345c6fdc6b984a7cdb06425a2a",
+        sha256 = "9850dd146f93ee4da8ba06316591888860a4058c8548409cdfb5dd693abcd834",
         strip_prefix = "factorio",
         type = "tar.xz",
-        urls = ["https://factorio.com/get-download/1.1.94/headless/linux64"],
+        urls = ["https://factorio.com/get-download/1.1.100/headless/linux64"],
     )
 
 repos_bzlmod = module_extension(implementation = repos)
