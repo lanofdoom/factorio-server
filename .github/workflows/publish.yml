@@ -1,17 +1,15 @@
-name: build
+name: publish
 on:
   push:
     branches:
       - main
   workflow_dispatch:
 jobs:
-  push:
-    runs-on: ubuntu-20.04
+  publish:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build and test image
-        run: bazelisk test -c opt //...
+      - uses: actions/checkout@v4
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-      - name: Push image
+      - name: Build and push image
         run: bazelisk run -c opt //:image_push

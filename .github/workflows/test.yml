@@ -1,0 +1,13 @@
+name: test
+on:
+  push:
+    branches:
+      - "renovate/**"
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test image
+        run: bazelisk test -c opt //...
