@@ -10,7 +10,7 @@ oci.pull(
 )
 use_repo(oci, "distroless_base")
 
-bazel_dep(name = "rules_pkg", version = "0.9.1")
+bazel_dep(name = "rules_pkg", version = "1.0.1")
 
 repos = use_extension("//:repos.bzl", "repos_bzlmod")
 use_repo(
