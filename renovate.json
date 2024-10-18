@@ -5,5 +5,23 @@
     ],
     "automerge": true,
     "automergeType": "branch",
-    "dependencyDashboard": true
+    "dependencyDashboard": true,
+    "customDatasources": {
+        "factorio": {
+            "defaultRegistryUrlTemplate": "https://www.factorio.com/download/archive/",
+            "format": "html"
+        }
+    },
+    "customManagers": [
+        {
+            "customType": "regex",
+            "fileMatch": [
+                "repos.bzl"
+            ],
+            "matchStrings": [
+                "https:\/\/(?<depName>.*).com\/get-download\/(?<currentValue>.*)\/headless\/linux64"
+            ],
+            "datasourceTemplate": "custom.factorio"
+        }
+    ]
 }
