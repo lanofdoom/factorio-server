@@ -1,6 +1,6 @@
-module(name = "factorio_server", repo_name = "com_github_lanofdoom_factorio_server")
+module(name = "factorio_server")
 
-bazel_dep(name = "rules_oci", version = "1.4.0")
+bazel_dep(name = "rules_oci", version = "2.0.0")
 oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
 oci.pull(
     name = "distroless_base",
@@ -8,7 +8,7 @@ oci.pull(
     image = "gcr.io/distroless/cc",
     platforms = ["linux/amd64"],
 )
-use_repo(oci, "distroless_base")
+use_repo(oci, "distroless_base", "distroless_base_linux_amd64")
 
 bazel_dep(name = "rules_pkg", version = "1.0.1")
 

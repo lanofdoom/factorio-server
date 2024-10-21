@@ -1,5 +1,5 @@
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
-load("@rules_oci//oci:defs.bzl", "oci_image", "oci_push", "oci_tarball")
 
 # config-path.cfg configures the following:
 # - `config-path` is `/etc/factorio`
@@ -40,6 +40,12 @@ oci_image(
     ],
 )
 
+oci_load(
+    name = "image_tarball",
+    image = ":image",
+    repo_tags = ["factorio-server:bazel"],
+)
+
 oci_push(
     name = "image_push",
     image = ":image",
@@ -47,15 +53,13 @@ oci_push(
     repository = "ghcr.io/lanofdoom/factorio-server",
 )
 
-oci_tarball(
-    name = "image_tarball",
-    image = ":image",
-    repo_tags = ["factorio-server:bazel"],
-)
-
 sh_test(
     name = "test_create_map",
     srcs = ["test_create_map.sh"],
+    args = [
+        "$(location :image_tarball)",
+        "test.zip",
+    ],
     data = [":image_tarball"],
     deps = ["@bazel_tools//tools/bash/runfiles"],
 )
