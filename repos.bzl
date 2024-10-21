@@ -25,7 +25,7 @@ filegroup(
 )
 
         """,
-        integrity = "sha256-Boim9hWoe/c9P0a1PcQj7jfK0/xEEnI/PXRQrtFjg5I=",
+        integrity = "",
         strip_prefix = "factorio",
         type = "tar.xz",
         urls = ["https://factorio.com/get-download/1.1.101/headless/linux64"],

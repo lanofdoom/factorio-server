@@ -1,27 +1,26 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-        "config:recommended"
-    ],
-    "automerge": true,
-    "automergeType": "branch",
-    "dependencyDashboard": true,
-    "customDatasources": {
-        "factorio": {
-            "defaultRegistryUrlTemplate": "https://www.factorio.com/download/archive/",
-            "format": "html"
-        }
-    },
-    "customManagers": [
-        {
-            "customType": "regex",
-            "fileMatch": [
-                "repos.bzl"
-            ],
-            "matchStrings": [
-                "https:\/\/(?<depName>.*).com\/get-download\/(?<currentValue>.*)\/headless\/linux64"
-            ],
-            "datasourceTemplate": "custom.factorio"
-        }
-    ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "automerge": true,
+  "automergeType": "branch",
+  "dependencyDashboard": true,
+  "customDatasources": {
+    "factorio": {
+      "defaultRegistryUrlTemplate": "https://factorio.com/api/latest-releases",
+      "format": "json",
+      "transformTemplates": [
+        "{\"releases\":[{\"version\": $string(stable.headless)}]}"
+      ]
+    }
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["repos.bzl"],
+      "matchStrings": [
+        "https://(?<depName>.*).com/get-download/(?<currentValue>.*)/headless/linux64"
+      ],
+      "datasourceTemplate": "custom.factorio"
+    }
+  ]
 }
