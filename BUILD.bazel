@@ -1,5 +1,6 @@
 load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
+load(":repos.bzl", "VERSION_factorio")
 
 # config-path.cfg configures the following:
 # - `config-path` is `/etc/factorio`
@@ -49,7 +50,10 @@ oci_load(
 oci_push(
     name = "image_push",
     image = ":image",
-    remote_tags = ["latest"],
+    remote_tags = [
+        "latest",
+        "factorio-{}".format(VERSION_factorio),
+    ],
     repository = "ghcr.io/lanofdoom/factorio-server",
 )
 

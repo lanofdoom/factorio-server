@@ -1,5 +1,8 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+VERSION_factorio = "2.0.7"
+HEADLESS_URL = "https://factorio.com/get-download/{}/headless/linux64".format(VERSION_factorio)
+
 def repos(bzlmod = False):
     """Fetches repositories"""
     http_archive(
@@ -28,7 +31,7 @@ filegroup(
         integrity = "",
         strip_prefix = "factorio",
         type = "tar.xz",
-        urls = ["https://factorio.com/get-download/2.0.8/headless/linux64"],
+        urls = [HEADLESS_URL],
     )
 
 repos_bzlmod = module_extension(implementation = repos)

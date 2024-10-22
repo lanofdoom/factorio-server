@@ -17,9 +17,7 @@
     {
       "customType": "regex",
       "fileMatch": ["repos.bzl"],
-      "matchStrings": [
-        "https://(?<depName>.*).com/get-download/(?<currentValue>.*)/headless/linux64"
-      ],
+      "matchStrings": ["VERSION_(?<depName>.*) = \"(?<currentValue>.*)\""],
       "datasourceTemplate": "custom.factorio"
     }
   ]
