@@ -28,7 +28,7 @@ filegroup(
         integrity = "",
         strip_prefix = "factorio",
         type = "tar.xz",
-        urls = ["https://factorio.com/get-download/1.1.101/headless/linux64"],
+        urls = ["https://factorio.com/get-download/2.0.8/headless/linux64"],
     )
 
 repos_bzlmod = module_extension(implementation = repos)
