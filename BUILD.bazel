@@ -22,7 +22,7 @@ pkg_tar(
     },
 
     # this is taking advantage of a bug that causes the tree to not be flatened
-    strip_prefix = "./external/_main~repos_bzlmod~factorio_headless_release",
+    strip_prefix = "./external/+repos_bzlmod+factorio_headless_release",
 )
 
 pkg_tar(
