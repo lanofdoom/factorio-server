@@ -17,5 +17,9 @@
       "matchStrings": ["VERSION_(?<depName>.*) = \"(?<currentValue>.*)\""],
       "datasourceTemplate": "custom.factorio"
     }
-  ]
+  ],
+  "postUpgradeTasks": {
+    "commands": ["bazelisk mod deps"],
+    "executionMode": "branch"
+  }
 }
