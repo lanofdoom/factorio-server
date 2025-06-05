@@ -1,6 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-VERSION_factorio = "2.0.47"
+VERSION_factorio = "2.0.55"
 HEADLESS_URL = "https://factorio.com/get-download/{}/headless/linux64".format(VERSION_factorio)
 
 def repos(bzlmod = False):
