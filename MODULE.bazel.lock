@@ -151,7 +151,7 @@
   "moduleExtensions": {
     "//:repos.bzl%repos_bzlmod": {
       "general": {
-        "bzlTransitiveDigest": "YD+/7io39mYJHHj7uqvsAFMP1/t+fmSOPr10OqZH+ns=",
+        "bzlTransitiveDigest": "p5Gyn1UYcHxjpmFR9DZDn57rzHmkOZXireLqz7qbpdM=",
         "usagesDigest": "qumsWM4Xjs2aeodnTimkYySk5Cxw/UQrLRn8Ts4SKIk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -165,7 +165,7 @@
               "strip_prefix": "factorio",
               "type": "tar.xz",
               "urls": [
-                "https://factorio.com/get-download/2.0.55/headless/linux64"
+                "https://factorio.com/get-download/2.0.60/headless/linux64"
               ]
             }
           }
