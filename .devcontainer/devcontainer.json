@@ -1,6 +1,6 @@
 {
 	"name": "Default Linux Universal",
-	"image": "mcr.microsoft.com/devcontainers/universal:4-linux",
+	"image": "mcr.microsoft.com/devcontainers/universal:5-linux",
 	"features": {
 		"ghcr.io/devcontainers-community/features/bazel:1": {
 			"bazelisk_version": "latest",
