@@ -1,5 +1,5 @@
 {
-  "lockFileVersion": 18,
+  "lockFileVersion": 24,
   "registryFileHashes": {
     "https://bcr.bazel.build/bazel_registry.json": "8a28e4aff06ee60aed2a8c281907fb8bcbf3b753c91fb5a5c57da3215d5b3497",
     "https://bcr.bazel.build/modules/abseil-cpp/20210324.2/MODULE.bazel": "7cd0312e064fde87c8d1cd79ba06c876bd23630c83466e9500321be55c96ace2",
@@ -152,7 +152,7 @@
   "moduleExtensions": {
     "//:repos.bzl%repos_bzlmod": {
       "general": {
-        "bzlTransitiveDigest": "HVHNzhktELbXjbRkJn+4NHZFpCTdw4cglxU/pRALSws=",
+        "bzlTransitiveDigest": "A9UvksSYh0pWy4jYX/Dxh5Mi70jX5QrZ2nUoGG+i4iA=",
         "usagesDigest": "qumsWM4Xjs2aeodnTimkYySk5Cxw/UQrLRn8Ts4SKIk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -182,7 +182,7 @@
     },
     "@@aspect_bazel_lib+//lib:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "wHziE/m1F320vC+YfPrZtDqHsXhEpU/733LhRjjLT6E=",
+        "bzlTransitiveDigest": "zfozrNyuLMkDOfq1p4+AVh3NxlfIVWy1OkjNOmQEmr8=",
         "usagesDigest": "ZqVa4PTci1qau++e6zsfgw321haglCL8eUOWknKULH0=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -591,7 +591,7 @@
     },
     "@@pybind11_bazel+//:python_configure.bzl%extension": {
       "general": {
-        "bzlTransitiveDigest": "4rSUGWibZDYLhHR+8eMwTNwAwdIv+xjVrtQ+gHtWHq4=",
+        "bzlTransitiveDigest": "c9ZWWeXeu6bctL4/SsY2otFWyeFN0JJ20+ymGyJZtWk=",
         "usagesDigest": "fycyB39YnXIJkfWCIXLUKJMZzANcuLy9ZE73hRucjFk=",
         "recordedFileInputs": {
           "@@pybind11_bazel+//MODULE.bazel": "88af1c246226d87e65be78ed49ecd1e6f5e98648558c14ce99176da041dc378e"
@@ -625,7 +625,7 @@
     },
     "@@rules_fuzzing+//fuzzing/private:extensions.bzl%non_module_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "v2H25KPHEkN56IHR41S67Kzp5Xjxd75GBiazhON8jzc=",
+        "bzlTransitiveDigest": "WHRlQQnxW7e7XMRBhq7SARkDarLDOAbg6iLaJpk5QYM=",
         "usagesDigest": "wy6ISK6UOcBEjj/mvJ/S3WeXoO67X+1llb9yPyFtPgc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -708,7 +708,7 @@
     },
     "@@rules_kotlin+//src/main/starlark/core/repositories:bzlmod_setup.bzl%rules_kotlin_extensions": {
       "general": {
-        "bzlTransitiveDigest": "OlvsB0HsvxbR8ZN+J9Vf00X/+WVz/Y/5Xrq2LgcVfdo=",
+        "bzlTransitiveDigest": "rL/34P1aFDq2GqVC2zCFgQ8nTuOC6ziogocpvG50Qz8=",
         "usagesDigest": "QI2z8ZUR+mqtbwsf2fLqYdJAkPOHdOV+tF2yVAUgRzw=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -772,7 +772,7 @@
     },
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "XCh21ZXkFyIWtRJj/7sw0Rrfb1BopaITW9BVDZySeB0=",
+        "bzlTransitiveDigest": "quk1Dfrpa9uVstfnqDufChSWBun9F78CNRPu7buU6G8=",
         "usagesDigest": "UOOhkY5WUEsgXFFhmCOVN5LbPTQipwG+SXLCNMj63xI=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -961,7 +961,7 @@
     },
     "@@rules_python+//python/extensions:pip.bzl%pip": {
       "general": {
-        "bzlTransitiveDigest": "nsM9TJlv/3UhfShpdNe4npF8AD7NuDCHDmBSVNYOB98=",
+        "bzlTransitiveDigest": "QJFB+mMz+t0T5ZE+NVHTr0Wjox4gvFuVw9JFRbUw0kY=",
         "usagesDigest": "/9NP3RV6/DWuNdYAsIU/8UCgCX0TdPUJr0X6O+0lrtk=",
         "recordedFileInputs": {
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
@@ -3563,10 +3563,6 @@
             }
           }
         },
-        "moduleExtensionMetadata": {
-          "useAllRepos": "NO",
-          "reproducible": false
-        },
         "recordedRepoMappingEntries": [
           [
             "bazel_features+",
@@ -3701,5 +3697,6 @@
         ]
       }
     }
-  }
+  },
+  "facts": {}
 }
