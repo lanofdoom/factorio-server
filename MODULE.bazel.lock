@@ -961,7 +961,7 @@
     },
     "@@rules_python+//python/extensions:pip.bzl%pip": {
       "general": {
-        "bzlTransitiveDigest": "QJFB+mMz+t0T5ZE+NVHTr0Wjox4gvFuVw9JFRbUw0kY=",
+        "bzlTransitiveDigest": "Ow3uwXpFcSZvHlKK1YJSrPYu0HnV+9MA73NlTEA9YWQ=",
         "usagesDigest": "/9NP3RV6/DWuNdYAsIU/8UCgCX0TdPUJr0X6O+0lrtk=",
         "recordedFileInputs": {
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
