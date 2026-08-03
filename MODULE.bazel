@@ -1,6 +1,6 @@
 module(name = "factorio_server")
 
-bazel_dep(name = "rules_oci", version = "2.3.0")
+bazel_dep(name = "rules_oci", version = "2.3.2")
 oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
 oci.pull(
     name = "distroless_base",
@@ -9,8 +9,6 @@ oci.pull(
     platforms = ["linux/amd64"],
 )
 use_repo(oci, "distroless_base", "distroless_base_linux_amd64")
-
-bazel_dep(name = "rules_pkg", version = "1.2.0")
 
 repos = use_extension("//:repos.bzl", "repos_bzlmod")
 use_repo(

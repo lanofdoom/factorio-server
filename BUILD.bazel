@@ -1,5 +1,5 @@
 load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load", "oci_push")
-load("@rules_pkg//:pkg.bzl", "pkg_tar")
+load(":layer.bzl", "factorio_layer")
 load(":repos.bzl", "VERSION_factorio")
 
 # config-path.cfg configures the following:
@@ -8,27 +8,12 @@ load(":repos.bzl", "VERSION_factorio")
 # - `read-data` is `/usr/share/factorio` (via use-system-read-write-data-directories=true)
 #
 
-pkg_tar(
+factorio_layer(
     name = "factorio_headless",
-    srcs = [
-        "config-path.cfg",
-        "@factorio_headless_release//:bin",
-        "@factorio_headless_release//:data",
-    ],
-    remap_paths = {
-        "config-path.cfg": "/opt/factorio/config-path.cfg",
-        "/data": "/usr/share/factorio",
-        "/bin": "/opt/factorio/bin",
-    },
-
-    # this is taking advantage of a bug that causes the tree to not be flatened
-    strip_prefix = "./external/+repos_bzlmod+factorio_headless_release",
-)
-
-pkg_tar(
-    name = "mods",
-    srcs = [],
-    package_dir = "/root/.factorio/mods",
+    config = "config-path.cfg",
+    bin_srcs = ["@factorio_headless_release//:bin"],
+    data_srcs = ["@factorio_headless_release//:data"],
+    out = "factorio_headless.tar",
 )
 
 oci_image(
@@ -37,7 +22,6 @@ oci_image(
     entrypoint = ["/opt/factorio/bin/x64/factorio"],
     tars = [
         ":factorio_headless",
-        ":mods",
     ],
 )
 
